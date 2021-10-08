@@ -1,13 +1,51 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.*;
 
 public class Main {
-    public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
-        String myString = scanner.nextLine();
 
-        int tamanho; 
-        tamanho = myString.length(); // ma ele so vai pegar o tamanho da primeira string
-       	System.out.println(myString.length()); //agora to
-        scanner.close();
-  }
+  public static String upperCaseFirst(String val) {
+    char[] arr = val.toCharArray();
+    arr[0] = Character.toUpperCase(arr[0]);
+    return new String(arr);
+ }
+  public static void main(String args[]) {
+    Scanner scanner = new Scanner(System.in);
+    int tamanho1, tamanho2, soma;
+    String myString =  scanner.nextLine();
+    String myString2 = scanner.nextLine();
+    String [] vetor = new String[2];
+    String firstLtr = myString.substring(0, 1);
+    String restLtrs = myString.substring(1, myString2.length());
+    String firstLtr2 = myString2.substring(0, 1);
+    String restLtrs2 = myString2.substring(1, myString2.length());
+
+
+    firstLtr = firstLtr.toUpperCase();
+    myString = firstLtr + restLtrs;
+    firstLtr2 = firstLtr2.toUpperCase();
+    myString2 = firstLtr2 + restLtrs2;
+
+
+    for (int i = 0; i <= 2; i++ ) {
+      if (i == 0) {
+        vetor[i] = myString;
+      } else if (i == 1) {
+        vetor[i] = myString2;
+      }
+    }
+    
+    // item 2: ordenar
+    Arrays.sort(vetor);
+    System.out.println("Ordenado : ");
+    for (int i = 0; i <= 2; i++) {
+      System.out.println((i+1) + ": " + vetor[i]);
+    }
+    scanner.close();
+
+
+
+    }
+    
 }
