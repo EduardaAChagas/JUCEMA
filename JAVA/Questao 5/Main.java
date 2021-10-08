@@ -17,11 +17,13 @@ public class Main {
     String myString2 = scanner.nextLine();
     String [] vetor = new String[2];
     String firstLtr = myString.substring(0, 1);
-    String restLtrs = myString.substring(1, myString2.length());
+    String restLtrs = myString.substring(1, myString.length());
     String firstLtr2 = myString2.substring(0, 1);
     String restLtrs2 = myString2.substring(1, myString2.length());
 
-
+    tamanho1 = myString.length();
+    tamanho2 = myString2.length();
+    soma = tamanho1 + tamanho2;
     firstLtr = firstLtr.toUpperCase();
     myString = firstLtr + restLtrs;
     firstLtr2 = firstLtr2.toUpperCase();
@@ -36,11 +38,11 @@ public class Main {
       }
     }
     
+    System.out.println(soma);
     // item 2: ordenar
     Arrays.sort(vetor);
-    System.out.println("Ordenado : ");
     for (int i = 0; i <= 2; i++) {
-      System.out.println((i+1) + ": " + vetor[i]);
+      System.out.println(vetor[i]);
     }
     scanner.close();
 
